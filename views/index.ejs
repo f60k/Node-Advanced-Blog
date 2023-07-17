@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>BLOG</title>
+    <%- include("./head") %>
+  </head>
+
+  <body>
+    <%- include("./header") %>
+    <main>
+      <div class="grid-container">
+        <% allBlogs.forEach(blog => { %>
+
+        <div class="card">
+          <a href="blog/<%= blog._id  %>">
+            <div class="text-area">
+              <h2><%= blog.title %></h2>
+              <p><%= blog.summary %></p>
+            </div>
+          </a>
+        </div>
+        <%}); %>
+      </div>
+      <div class="bottom">
+        <% if(session !== undefined){ %>
+        <a href="/blog/create<%= singleBlog._id  %>" class="create-button"
+          >Create</a
+        >
+        <% } %> <% if(session === undefined){ %>
+        <a href="/user/login<%= singleBlog._id  %>" class="login-button"
+          >LOGIN</a
+        >
+        <% } %> <% if(session === undefined){ %>
+        <a href="/user/create<%= singleBlog._id  %>" class="user-create-button"
+          >REG</a
+        >
+        <% } %>
+      </div>
+    </main>
+    <%- include("./footer") %>
+  </body>
+</html>

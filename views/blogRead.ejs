@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>blogReadページ</title>
+    <%- include("./head") %>
+  </head>
+
+  <body>
+    <%- include("./header.ejs") %>
+    <main>
+      <div class="blog-read">
+        <h1><%= singleBlog.title %></h1>
+        <p><%= singleBlog.textBody %></p>
+      </div>
+      <div class="bottom">
+        <% if(session !== undefined){ %>
+        <a href="/blog/update/<%= singleBlog._id  %>" class="update-button"
+          >EDIT</a
+        >
+        <% } %> <% if(session !== undefined){ %>
+        <a href="/blog/delete/<%= singleBlog._id  %>" class="delete-button"
+          >DEL</a
+        >
+        <% } %>
+      </div>
+    </main>
+    <%- include("./footer") %>
+  </body>
+</html>
