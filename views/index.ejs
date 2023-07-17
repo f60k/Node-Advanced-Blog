@@ -23,17 +23,11 @@
       </div>
       <div class="bottom">
         <% if(session !== undefined){ %>
-        <a href="/blog/create<%= singleBlog._id  %>" class="create-button"
-          >Create</a
-        >
+        <a href="/blog/create" class="create-button">Create</a>
         <% } %> <% if(session === undefined){ %>
-        <a href="/user/login<%= singleBlog._id  %>" class="login-button"
-          >LOGIN</a
-        >
+        <a href="/user/login" class="login-button">LOGIN</a>
         <% } %> <% if(session === undefined){ %>
-        <a href="/user/create<%= singleBlog._id  %>" class="user-create-button"
-          >REG</a
-        >
+        <a href="/user/create" class="user-create-button">REG</a>
         <% } %>
       </div>
     </main>
